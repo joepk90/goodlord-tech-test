@@ -145,10 +145,15 @@ const ReferenceForm = (props: Props) => {
 
             </fieldset>
 
-            <button
-                type="submit"
-                disabled={!isValid}
-            >Submit</button>
+            <fieldset style={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'baseline' }}>
+
+                <a style={{ padding: '0 20px' }} href='#'>Cancel</a>
+
+                <button type="submit"
+                    disabled={!isValid}
+                >Submit</button>
+
+            </fieldset>
 
         </form>
     )
