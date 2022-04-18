@@ -2,6 +2,8 @@ import { useForm, FieldValues } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as Yup from "yup";
 import Fieldset from 'src/components/common/Fieldset';
+import FormManager from 'src/lib/ReferenceFormManager';
+import api from 'src/services/api';
 
 const schema = Yup.object({
     firstName: Yup.string()
@@ -56,8 +58,16 @@ const ReferenceForm = (props: Props) => {
         touchedFields
     } = formState;
 
-    const doSubmit = (data: FieldValues) => {
-        // console.log(data);
+    const doSubmit = async (data: FieldValues) => {
+
+        const form = new FormManager(data)
+
+        const serializedData = form.getSerializeData();
+        console.log('Serialized Form Data: ', serializedData);
+
+        const response = await api.post(serializedData)
+        console.log('Form Post Response: ', response);
+
     }
 
     const hasError = (property: string) => {
