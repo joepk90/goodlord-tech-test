@@ -41,6 +41,7 @@
     ]
   },
   "devDependencies": {
+    "react-hook-form": "^7.30.0",
     "tacit-css": "^1.5.5"
   }
 }
