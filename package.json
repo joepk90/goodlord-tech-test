@@ -41,7 +41,9 @@
     ]
   },
   "devDependencies": {
+    "@hookform/resolvers": "^2.8.8",
     "react-hook-form": "^7.30.0",
-    "tacit-css": "^1.5.5"
+    "tacit-css": "^1.5.5",
+    "yup": "^0.32.11"
   }
 }
