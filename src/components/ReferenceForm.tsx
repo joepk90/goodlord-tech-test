@@ -14,7 +14,26 @@ const schema = Yup.object({
     address: Yup.string()
         .min(2, 'Minimum of 2 characters required')
         .max(50, 'Maximum of 50 characters required')
-        .required('Required')
+        .required('Required'),
+    employerName: Yup.string()
+        .min(2, 'Minimum of 2 characters required')
+        .max(50, 'Maximum of 50 characters required')
+        .required('Required'),
+    employerStartDate: Yup.date()
+        .required('Required'),
+    employmentEndDate: Yup.date(),
+    guarantorName: Yup.string()
+        .min(2, 'Minimum of 2 characters required')
+        .max(50, 'Maximum of 50 characters required')
+        .required('Required'),
+    guarantorAddress: Yup.string()
+        .min(2, 'Minimum of 2 characters required')
+        .max(50, 'Maximum of 50 characters required')
+        .required('Required'),
+    guarantorRelationship: Yup.string().oneOf(
+        ['Parent', 'Sibling', 'Employer', 'Other'],
+        'Invalid Relationship Type'
+    ).required('Required'),
 }).required();
 
 type Props = {}
@@ -69,6 +88,60 @@ const ReferenceForm = (props: Props) => {
                     {...register('address')}
                     {...(hasError("address"))}
                 />
+            </fieldset>
+
+            <fieldset>
+
+                <h4>Employer</h4>
+                <label htmlFor='employerName'>Employer Name</label>
+                <input
+                    type='text'
+                    {...register('employerName')}
+                    {...(hasError("employerName"))}
+                />
+
+                <label htmlFor='employerStartDate'>Employer Start Date</label>
+                <input
+                    type='date'
+                    {...register('employerStartDate')}
+                    {...(hasError("employerStartDate"))}
+                />
+
+                <label htmlFor='employerEndDate'>Guarantor Relationship</label>
+                <input
+                    type='date'
+                    {...register('employerEndDate')}
+                    {...(hasError("employerEndDate"))}
+
+                />
+
+            </fieldset>
+
+            <fieldset>
+
+                <h4>Guarantor</h4>
+                <label htmlFor='guarantorName'>Guarantor Name</label>
+                <input
+                    type='text'
+                    {...register('guarantorName')}
+                    {...(hasError("guarantorName"))}
+                />
+
+                <label htmlFor='guarantorAddress'>Guarantor Address</label>
+                <input
+                    type='text'
+                    {...register('guarantorAddress')}
+                    {...(hasError("guarantorAddress"))}
+                />
+
+                <label htmlFor='guarantorRelationship'>Relationship to Guarantor</label>
+                <select {...register("guarantorRelationship")}>
+                    <option value="Parent">Parent</option>
+                    <option value="Sibling">Sibling</option>
+                    <option value="Employer">Employer</option>
+                    <option value="Other">Other</option>
+                </select>
+
             </fieldset>
 
             <button type="submit">Submit</button>
