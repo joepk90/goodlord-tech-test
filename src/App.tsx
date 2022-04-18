@@ -1,8 +1,12 @@
 function App() {
   return (
-    <div className="App">
+    <main>
+      <section>
 
-    </div>
+        <h1 className='text-center'>Goodlord Referencing Form</h1>
+
+      </section>
+    </main>
   );
 }
 
