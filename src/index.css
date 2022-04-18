@@ -21,3 +21,8 @@ code {
 input[error] {
   border: 1px solid red !important;
 }
+
+button[disabled] {
+  background: #333333 !important;
+  opacity: 0.5;
+}

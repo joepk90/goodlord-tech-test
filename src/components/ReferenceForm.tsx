@@ -50,6 +50,7 @@ const ReferenceForm = (props: Props) => {
     });
 
     const {
+        isValid,
         errors,
         touchedFields
     } = formState;
@@ -144,7 +145,10 @@ const ReferenceForm = (props: Props) => {
 
             </fieldset>
 
-            <button type="submit">Submit</button>
+            <button
+                type="submit"
+                disabled={!isValid}
+            >Submit</button>
 
         </form>
     )
