@@ -73,6 +73,7 @@ const ReferenceForm = (props: Props) => {
                 <label htmlFor='firstName'>First Name</label>
                 <input
                     type='text'
+                    className='width-full'
                     {...register("firstName")}
                     {...(hasError("firstName"))}
                 />
@@ -80,6 +81,7 @@ const ReferenceForm = (props: Props) => {
                 <label htmlFor='lastName'>Last Name</label>
                 <input
                     type='text'
+                    className='width-full'
                     {...register('lastName')}
                     {...(hasError("lastName"))}
                 />
@@ -87,6 +89,7 @@ const ReferenceForm = (props: Props) => {
                 <label htmlFor='address'>Address</label>
                 <input
                     type='text'
+                    className='width-full'
                     {...register('address')}
                     {...(hasError("address"))}
                 />
@@ -98,6 +101,7 @@ const ReferenceForm = (props: Props) => {
                 <label htmlFor='employerName'>Employer Name</label>
                 <input
                     type='text'
+                    className='width-full'
                     {...register('employerName')}
                     {...(hasError("employerName"))}
                 />
@@ -105,6 +109,7 @@ const ReferenceForm = (props: Props) => {
                 <label htmlFor='employerStartDate'>Employer Start Date</label>
                 <input
                     type='date'
+                    className='width-half'
                     {...register('employerStartDate')}
                     {...(hasError("employerStartDate"))}
                 />
@@ -112,6 +117,7 @@ const ReferenceForm = (props: Props) => {
                 <label htmlFor='employerEndDate'>Guarantor Relationship</label>
                 <input
                     type='date'
+                    className='width-half'
                     {...register('employerEndDate')}
                     {...(hasError("employerEndDate"))}
 
@@ -125,6 +131,7 @@ const ReferenceForm = (props: Props) => {
                 <label htmlFor='guarantorName'>Guarantor Name</label>
                 <input
                     type='text'
+                    className='width-full'
                     {...register('guarantorName')}
                     {...(hasError("guarantorName"))}
                 />
@@ -132,12 +139,16 @@ const ReferenceForm = (props: Props) => {
                 <label htmlFor='guarantorAddress'>Guarantor Address</label>
                 <input
                     type='text'
+                    className='width-full'
                     {...register('guarantorAddress')}
                     {...(hasError("guarantorAddress"))}
                 />
 
                 <label htmlFor='guarantorRelationship'>Relationship to Guarantor</label>
-                <select {...register("guarantorRelationship")}>
+                <select
+                    {...register("guarantorRelationship")}
+                    className='width-third'
+                >
                     <option value="Parent">Parent</option>
                     <option value="Sibling">Sibling</option>
                     <option value="Employer">Employer</option>

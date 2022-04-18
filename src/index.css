@@ -23,6 +23,21 @@ code {
   padding: 5px 20px;
 }
 
+.width-full {
+  width: 70%;
+  display: block;
+}
+
+.width-half {
+  width: 35%;
+  display: inline-block;
+}
+
+.width-third {
+  width: 23.3%;
+  display: inline-block;
+}
+
 input[error] {
   border: 1px solid red !important;
 }
