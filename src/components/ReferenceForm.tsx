@@ -44,6 +44,7 @@ type Props = {}
 const ReferenceForm = (props: Props) => {
 
     const {
+        reset,
         register,
         handleSubmit,
         formState
@@ -67,6 +68,8 @@ const ReferenceForm = (props: Props) => {
 
         const response = await api.post(serializedData)
         console.log('Form Post Response: ', response);
+
+        reset();
 
     }
 
