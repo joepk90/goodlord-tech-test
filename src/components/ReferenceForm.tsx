@@ -1,6 +1,7 @@
 import { useForm, FieldValues } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as Yup from "yup";
+import Fieldset from 'src/components/common/Fieldset';
 
 const schema = Yup.object({
     firstName: Yup.string()
@@ -66,7 +67,7 @@ const ReferenceForm = (props: Props) => {
     return (
         <form onSubmit={handleSubmit(doSubmit)}>
 
-            <fieldset>
+            <Fieldset>
                 <h4>Personal</h4>
 
                 <label htmlFor='firstName'>First Name</label>
@@ -89,9 +90,9 @@ const ReferenceForm = (props: Props) => {
                     {...register('address')}
                     {...(hasError("address"))}
                 />
-            </fieldset>
+            </Fieldset>
 
-            <fieldset>
+            <Fieldset>
 
                 <h4>Employer</h4>
                 <label htmlFor='employerName'>Employer Name</label>
@@ -116,9 +117,9 @@ const ReferenceForm = (props: Props) => {
 
                 />
 
-            </fieldset>
+            </Fieldset>
 
-            <fieldset>
+            <Fieldset>
 
                 <h4>Guarantor</h4>
                 <label htmlFor='guarantorName'>Guarantor Name</label>
@@ -143,7 +144,7 @@ const ReferenceForm = (props: Props) => {
                     <option value="Other">Other</option>
                 </select>
 
-            </fieldset>
+            </Fieldset>
 
             <fieldset style={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'baseline' }}>
 
